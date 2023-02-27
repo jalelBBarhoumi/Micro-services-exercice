@@ -1,14 +1,10 @@
-package com.insy2s.microservices;
+package com.insy2s.microservices2;
 
-import net.bytebuddy.utility.dispatcher.JavaDispatcher;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-class MicroservicesApplicationTests {
-
-	
+class Microservices2ApplicationTests {
 
 	@Test
 	void contextLoads() {
