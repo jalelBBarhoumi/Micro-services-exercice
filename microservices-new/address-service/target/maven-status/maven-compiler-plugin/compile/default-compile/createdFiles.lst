@@ -1,0 +1,8 @@
+com\insy2s\microservices2\dto\AdressRequest.class
+com\insy2s\microservices2\model\Adresse$AdresseBuilder.class
+com\insy2s\microservices2\service\AdressService.class
+com\insy2s\microservices2\dto\AdressRequest$AdressRequestBuilder.class
+com\insy2s\microservices2\Microservices2Application.class
+com\insy2s\microservices2\model\Adresse.class
+com\insy2s\microservices2\controller\AdressController.class
+com\insy2s\microservices2\repository\AdressRepository.class

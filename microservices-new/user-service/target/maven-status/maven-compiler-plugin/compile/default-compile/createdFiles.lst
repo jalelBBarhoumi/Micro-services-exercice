@@ -1,0 +1,10 @@
+com\insy2s\microservices\dto\UserRequest.class
+com\insy2s\microservices\model\User.class
+com\insy2s\microservices\dto\UserResponse$UserResponseBuilder.class
+com\insy2s\microservices\dto\UserRequest$UserRequestBuilder.class
+com\insy2s\microservices\dto\UserResponse.class
+com\insy2s\microservices\MicroservicesApplication.class
+com\insy2s\microservices\service\UserService.class
+com\insy2s\microservices\model\User$UserBuilder.class
+com\insy2s\microservices\controller\UserController.class
+com\insy2s\microservices\repository\UserRepository.class
