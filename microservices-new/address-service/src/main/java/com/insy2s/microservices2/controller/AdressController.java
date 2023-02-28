@@ -50,6 +50,14 @@ public class AdressController {
         adressService.deleteAdress(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/addresses/{id}")
+    public Boolean getAddress(@PathVariable("id") Long id) {
+        // Look up the address by ID in the address microservice's database
+        Adresse address = adressService.getAdressById(id);
+            return(address != null);
+
+    }
+
 
 
 
