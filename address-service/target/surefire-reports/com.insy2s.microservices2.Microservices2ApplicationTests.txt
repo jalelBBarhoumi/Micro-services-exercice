@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.insy2s.microservices2.Microservices2ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.165 s - in com.insy2s.microservices2.Microservices2ApplicationTests
