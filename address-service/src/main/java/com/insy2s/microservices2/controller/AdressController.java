@@ -55,11 +55,16 @@ public class AdressController {
     }
 
     @GetMapping("/addresses/{id}")
-    public Boolean getAddress(@PathVariable("id") Long id) {
+    public ResponseEntity<Adresse> getAddress(@PathVariable("id") Long id) {
         // Look up the address by ID in the address microservice's database
         Adresse address = adressService.getAdressById(id);
-            return(address != null);
-
+        if (address != null) {
+            // If the address exists, return it with a success status code
+            return ResponseEntity.ok(address);
+        } else {
+            // If the address doesn't exist, return a not found status code
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

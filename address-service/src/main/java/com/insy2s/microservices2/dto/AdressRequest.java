@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class AdressRequest {
-    private String adress;
+    private String ville;
+    private String rue;
+    private Long codePostal;
 }

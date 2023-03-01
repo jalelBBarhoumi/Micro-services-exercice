@@ -1,5 +1,6 @@
 package com.insy2s.microservices.service;
 
+import com.insy2s.microservices.dto.AddresseDTO;
 import com.insy2s.microservices.dto.UserRequest;
 import com.insy2s.microservices.dto.UserResponse;
 import com.insy2s.microservices.model.User;
@@ -43,9 +44,11 @@ public class UserService {
                // .bodyToMono(Boolean.class)
              //   .block();
 
-        Boolean result = apiClient.getAddress(userRequest.getIdAdress());
+       AddresseDTO result = apiClient.getAddress(userRequest.getIdAdress());
 
-        if(result){
+        if(result!= null){
+        
+
             userRepository.save(user);
         }else{
             throw new IllegalArgumentException("Address intouvable");

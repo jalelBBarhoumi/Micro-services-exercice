@@ -17,7 +17,9 @@ public class AdressService {
     private final AdressRepository adressRepository;
     public void createAdress(AdressRequest adressRequest){
         Adresse adresse = Adresse.builder()
-                .adress(adressRequest.getAdress())
+                .ville(adressRequest.getVille())
+                .rue(adressRequest.getRue())
+                .codePostal(adressRequest.getCodePostal())
                 .build();
         adressRepository.save(adresse);
         log.info("adress "+adresse.getId()+"is saved ");
@@ -33,7 +35,9 @@ public class AdressService {
         Optional<Adresse> optionalAdresse = adressRepository.findById(id);
         if(optionalAdresse.isPresent()) {
             Adresse adresse = optionalAdresse.get();
-            adresse.setAdress(adressRequest.getAdress());
+            adresse.setVille(adressRequest.getVille());
+            adresse.setRue(adressRequest.getRue());
+            adresse.setCodePostal(adressRequest.getCodePostal());
             return adressRepository.save(adresse);
         } else {
             return null;
