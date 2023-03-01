@@ -4,6 +4,7 @@ import com.insy2s.microservices.dto.UserRequest;
 import com.insy2s.microservices.dto.UserResponse;
 import com.insy2s.microservices.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
+
 public class UserController {
 
     private final UserService userService;

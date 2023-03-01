@@ -8,12 +8,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.FeignClient;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/adress")
 @RequiredArgsConstructor
+
+//@FeignClient(value = "ADDRESS-SERVICE", url = "http://localhost:8081")
 public class AdressController {
     private final AdressService adressService;
     @PostMapping
@@ -50,6 +53,7 @@ public class AdressController {
         adressService.deleteAdress(id);
         return ResponseEntity.noContent().build();
     }
+
     @GetMapping("/addresses/{id}")
     public Boolean getAddress(@PathVariable("id") Long id) {
         // Look up the address by ID in the address microservice's database

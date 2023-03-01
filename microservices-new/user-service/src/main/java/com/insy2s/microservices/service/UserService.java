@@ -6,9 +6,10 @@ import com.insy2s.microservices.model.User;
 import com.insy2s.microservices.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.util.UriComponentsBuilder;
+
 
 import java.net.URI;
 import java.util.List;
@@ -16,9 +17,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+
+
+
+
 public class UserService {
     private final UserRepository userRepository;
     private final WebClient webClient;
+
+
+    @Autowired
+    private APIClient apiClient;
 
     public void createUser(UserRequest userRequest){
         User user= User.builder()
@@ -28,11 +37,14 @@ public class UserService {
                 .build();
 
 
-        Boolean result = webClient.get()
-                .uri("http://localhost:8081/api/adress/addresses/"+userRequest.getIdAdress())
-                .retrieve()
-                .bodyToMono(Boolean.class)
-                .block();
+        //Boolean result = webClient.get()
+               // .uri("http://localhost:8081/api/adress/addresses/"+userRequest.getIdAdress())
+             //   .retrieve()
+               // .bodyToMono(Boolean.class)
+             //   .block();
+
+        Boolean result = apiClient.getAddress(userRequest.getIdAdress());
+
         if(result){
             userRepository.save(user);
         }else{
